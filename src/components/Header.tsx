@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -41,25 +43,25 @@ const Header: React.FC = () => {
               <path d="M2 12l10 5 10-5" />
             </svg>
           </div>
-          <span className="font-medium text-lg tracking-tight">Insight AI</span>
+          <span className="font-medium text-lg tracking-tight">Repricing Tracker</span>
         </div>
         <nav>
           <ul className="flex items-center space-x-8">
             <li>
-              <a 
-                href="#features" 
+              <Link 
+                to="/"
                 className="text-sm text-foreground/80 hover:text-foreground transition-colors"
               >
-                Features
-              </a>
+                Counter
+              </Link>
             </li>
             <li>
-              <a 
-                href="#about" 
+              <Link 
+                to="/home"
                 className="text-sm text-foreground/80 hover:text-foreground transition-colors"
               >
-                About
-              </a>
+                Home
+              </Link>
             </li>
             <li>
               <Button 
@@ -67,7 +69,7 @@ const Header: React.FC = () => {
                 size="sm"
                 className="rounded-full transition-all duration-300 hover:bg-primary hover:text-white border-primary/20"
               >
-                Early Access
+                Contact
               </Button>
             </li>
           </ul>
@@ -76,7 +78,5 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-import { Button } from "@/components/ui/button";
 
 export default Header;
