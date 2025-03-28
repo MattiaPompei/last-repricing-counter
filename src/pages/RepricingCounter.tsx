@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Calendar, CalendarIcon, RotateCcw } from "lucide-react";
+import { Calendar, CalendarIcon, RotateCcw, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
 import DaysCounter from "@/components/DaysCounter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -49,6 +49,16 @@ const RepricingCounter: React.FC = () => {
     setDatePickerDate(today);
     localStorage.setItem("lastRepricingDate", today.toISOString());
     toast.success("Counter reset to today");
+  };
+  
+  const skipOneDay = () => {
+    // Create a new date that's one day earlier than the current repricing date
+    const newDate = new Date(lastRepricingDate);
+    newDate.setDate(newDate.getDate() - 1);
+    setLastRepricingDate(newDate);
+    setDatePickerDate(newDate);
+    localStorage.setItem("lastRepricingDate", newDate.toISOString());
+    toast.success("Skipped ahead one day");
   };
   
   return (
@@ -146,6 +156,15 @@ const RepricingCounter: React.FC = () => {
           >
             <RotateCcw className="h-4 w-4" />
             Reset Counter
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            className="flex items-center gap-2 border-[#FDC400] bg-white hover:bg-white/90 text-black/70" 
+            onClick={skipOneDay}
+          >
+            <ArrowRight className="h-4 w-4" />
+            Skip One Day
           </Button>
         </div>
       </div>

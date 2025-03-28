@@ -4,9 +4,13 @@ import VintageCalendarCard from "./VintageCalendarCard";
 
 interface DaysCounterProps {
   lastEventDate: Date;
+  onSkipDay?: () => void;
 }
 
-const DaysCounter: React.FC<DaysCounterProps> = ({ lastEventDate }) => {
+const DaysCounter: React.FC<DaysCounterProps> = ({ 
+  lastEventDate,
+  onSkipDay
+}) => {
   const [days, setDays] = useState<number>(0);
   const [flipping, setFlipping] = useState<boolean>(false);
   
@@ -47,9 +51,6 @@ const DaysCounter: React.FC<DaysCounterProps> = ({ lastEventDate }) => {
             isFlipping={flipping}
           />
         ))}
-      </div>
-      <div className="mt-6 text-lg text-muted-foreground">
-        days since last repricing
       </div>
     </div>
   );
