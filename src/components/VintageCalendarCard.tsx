@@ -30,7 +30,7 @@ const VintageCalendarCard: React.FC<VintageCalendarCardProps> = ({
         )}
       >
         {/* Front face */}
-        <div className="absolute w-full h-full bg-white border border-black/10 rounded-md shadow-lg backface-hidden flex items-center justify-center transform rotate-x-0">
+        <div className="absolute w-full h-full bg-gradient-to-b from-white to-white/90 border border-black/10 rounded-md shadow-lg backface-hidden flex items-center justify-center transform rotate-x-0">
           <span className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E60000] to-[#FDC400] font-mono">
             {digit}
           </span>
@@ -47,7 +47,7 @@ const VintageCalendarCard: React.FC<VintageCalendarCardProps> = ({
         </div>
         
         {/* Back face */}
-        <div className="absolute w-full h-full bg-white border border-black/10 rounded-md shadow-lg backface-hidden flex items-center justify-center transform rotate-x-180">
+        <div className="absolute w-full h-full bg-gradient-to-b from-white to-white/90 border border-black/10 rounded-md shadow-lg backface-hidden flex items-center justify-center transform rotate-x-180">
           <span className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E60000] to-[#FDC400] font-mono">
             {digit}
           </span>
@@ -64,9 +64,9 @@ const VintageCalendarCard: React.FC<VintageCalendarCardProps> = ({
         </div>
       </div>
       
-      {/* Card "holes" redesigned to match the red color */}
-      <div className="absolute top-3 left-3 w-3 h-3 rounded-full bg-[#E60000] shadow-[0_0_5px_rgba(230,0,0,0.5)]"></div>
-      <div className="absolute top-3 right-3 w-3 h-3 rounded-full bg-[#FDC400] shadow-[0_0_5px_rgba(253,196,0,0.5)]"></div>
+      {/* Card "holes" redesigned as tech accents */}
+      <div className="absolute top-3 left-3 w-3 h-3 rounded-full bg-gradient-to-r from-[#E60000] to-[#FDC400] shadow-[0_0_5px_rgba(230,0,0,0.5)]"></div>
+      <div className="absolute top-3 right-3 w-3 h-3 rounded-full bg-gradient-to-r from-[#E60000] to-[#FDC400] shadow-[0_0_5px_rgba(230,0,0,0.5)]"></div>
     </div>
   );
 };

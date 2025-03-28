@@ -53,22 +53,35 @@ const RepricingCounter: React.FC = () => {
   
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
-      {/* Clean white background, no mesh */}
+      {/* Mesh background */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="mesh" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M0 20 L40 20 M20 0 L20 40" stroke="black" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="100%" height="100%" fill="url(#mesh)" />
+          </svg>
+        </div>
+      </div>
       
-      {/* Subtle decorative elements */}
-      <div className="absolute top-10 right-10 w-20 h-20 rounded-full bg-[#FDC400]/10"></div>
-      <div className="absolute bottom-10 left-10 w-24 h-24 rounded-full bg-[#E60000]/10"></div>
+      {/* Gradient orbs for tech feel */}
+      <div className="absolute top-[20%] right-[15%] w-64 h-64 rounded-full bg-[#FDC400]/10 blur-[100px]"></div>
+      <div className="absolute bottom-[20%] left-[15%] w-72 h-72 rounded-full bg-[#E60000]/10 blur-[100px]"></div>
+      <div className="absolute top-[40%] left-[20%] w-48 h-48 rounded-full bg-[#FDC400]/10 blur-[100px]"></div>
       
       <div className="w-full max-w-3xl mx-auto text-center relative z-10">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-10 text-black">
           Days Since Last Repricing
         </h1>
         
-        <Card className="bg-white shadow-xl border-black/10 overflow-hidden">
-          <div className="absolute inset-0 bg-white pointer-events-none"></div>
+        <Card className="bg-white/90 backdrop-blur-md shadow-xl border-black/5 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#E60000]/5 to-[#FDC400]/5 pointer-events-none"></div>
           <CardContent className="p-8 flex flex-col items-center relative">
             <div className="relative">
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-48 h-4 bg-[#E60000] rounded-t-md"></div>
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-48 h-4 bg-gradient-to-r from-[#E60000] to-[#FDC400] rounded-t-md"></div>
               <DaysCounter lastEventDate={lastRepricingDate} />
             </div>
           </CardContent>
@@ -85,12 +98,12 @@ const RepricingCounter: React.FC = () => {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
-              <Button className="flex items-center gap-2 bg-[#E60000] hover:bg-[#E60000]/90 text-white border-0">
+              <Button className="flex items-center gap-2 bg-gradient-to-r from-[#E60000] to-[#FDC400] border-0 hover:from-[#E60000]/90 hover:to-[#FDC400]/90 text-white">
                 <Calendar className="h-4 w-4" />
                 Set Repricing Date
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px] bg-white border border-black/10">
+            <DialogContent className="sm:max-w-[425px] bg-white/95 backdrop-blur-lg border border-black/10">
               <DialogHeader>
                 <DialogTitle className="text-black">Set Repricing Date</DialogTitle>
                 <DialogDescription className="text-black/70">
@@ -132,7 +145,7 @@ const RepricingCounter: React.FC = () => {
                 <Button 
                   onClick={updateRepricingDate} 
                   type="submit"
-                  className="bg-[#E60000] hover:bg-[#E60000]/90 text-white border-0"
+                  className="bg-gradient-to-r from-[#E60000] to-[#FDC400] border-0 hover:from-[#E60000]/90 hover:to-[#FDC400]/90 text-white"
                 >
                   Update Date
                 </Button>
@@ -142,7 +155,7 @@ const RepricingCounter: React.FC = () => {
 
           <Button 
             variant="outline" 
-            className="flex items-center gap-2 border-[#FDC400] hover:bg-[#FDC400]/10 text-black" 
+            className="flex items-center gap-2 border-black/10 bg-white hover:bg-white/90 text-black/70" 
             onClick={resetCounter}
           >
             <RotateCcw className="h-4 w-4" />
