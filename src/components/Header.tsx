@@ -21,13 +21,13 @@ const Header: React.FC = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300",
         scrolled 
-          ? "bg-background/80 backdrop-blur-md shadow-soft" 
+          ? "bg-white shadow-soft" 
           : "bg-transparent"
       )}
     >
       <div className="container flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
+          <div className="w-8 h-8 rounded-md bg-[#E60000] flex items-center justify-center">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 24 24" 
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
             <li>
               <Link 
                 to="/"
-                className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+                className="text-sm text-black/80 hover:text-black transition-colors"
               >
                 Counter
               </Link>
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
             <li>
               <Link 
                 to="/home"
-                className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+                className="text-sm text-black/80 hover:text-black transition-colors"
               >
                 Home
               </Link>
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
               <Button 
                 variant="outline"
                 size="sm"
-                className="rounded-full transition-all duration-300 hover:bg-primary hover:text-white border-primary/20"
+                className="rounded-full transition-all duration-300 hover:bg-[#FDC400]/10 border-[#FDC400] text-black"
               >
                 Contact
               </Button>

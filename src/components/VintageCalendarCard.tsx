@@ -30,12 +30,11 @@ const VintageCalendarCard: React.FC<VintageCalendarCardProps> = ({
         )}
       >
         {/* Front face */}
-        <div className="absolute w-full h-full bg-gradient-to-b from-white to-white/90 border border-black/10 rounded-md shadow-lg backface-hidden flex items-center justify-center transform rotate-x-0">
+        <div className="absolute w-full h-full bg-white border border-black/10 rounded-md shadow-lg backface-hidden flex items-center justify-center transform rotate-x-0">
           <span className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E60000] to-[#FDC400] font-mono">
             {digit}
           </span>
           <div className="absolute bottom-0 w-full h-[1px] bg-black/10"></div>
-          <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-white/20 to-transparent opacity-60 pointer-events-none"></div>
           
           {/* Tech details */}
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -47,12 +46,11 @@ const VintageCalendarCard: React.FC<VintageCalendarCardProps> = ({
         </div>
         
         {/* Back face */}
-        <div className="absolute w-full h-full bg-gradient-to-b from-white to-white/90 border border-black/10 rounded-md shadow-lg backface-hidden flex items-center justify-center transform rotate-x-180">
+        <div className="absolute w-full h-full bg-white border border-black/10 rounded-md shadow-lg backface-hidden flex items-center justify-center transform rotate-x-180">
           <span className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E60000] to-[#FDC400] font-mono">
             {digit}
           </span>
           <div className="absolute bottom-0 w-full h-[1px] bg-black/10"></div>
-          <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-white/20 to-transparent opacity-60 pointer-events-none"></div>
           
           {/* Tech details */}
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
