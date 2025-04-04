@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Calendar, CalendarIcon, RotateCcw, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
@@ -70,7 +71,7 @@ const RepricingCounter: React.FC = () => {
         </h1>
         
         <Card className="bg-white shadow-xl border-black/5 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none"></div>
+          {/* Removed the colored tint background div that was here */}
           <CardContent className="p-8 flex flex-col items-center relative">
             <div className="relative">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-48 h-4 bg-gradient-to-r from-[#E60000] to-[#FDC400] rounded-t-md"></div>
@@ -144,23 +145,32 @@ const RepricingCounter: React.FC = () => {
           </DialogContent>
         </Dialog>
 
-        <Button 
-          variant="outline" 
-          className="flex items-center gap-2 border-[#FDC400] bg-white hover:bg-white/90 text-black/70" 
-          onClick={resetCounter}
-        >
-          <RotateCcw className="h-4 w-4" />
-          Reset Counter
-        </Button>
-        
-        <Button 
-          variant="outline" 
-          className="flex items-center gap-2 border-[#FDC400] bg-white hover:bg-white/90 text-black/70" 
-          onClick={skipOneDay}
-        >
-          <ArrowRight className="h-4 w-4" />
-          Skip One Day
-        </Button>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <DialogTrigger asChild>
+            <Button className="flex items-center gap-2 bg-[#E60000] hover:bg-[#E60000]/90 border-0 text-white">
+              <Calendar className="h-4 w-4" />
+              Set Repricing Date
+            </Button>
+          </DialogTrigger>
+
+          <Button 
+            variant="outline" 
+            className="flex items-center gap-2 border-[#FDC400] bg-white hover:bg-white/90 text-black/70" 
+            onClick={resetCounter}
+          >
+            <RotateCcw className="h-4 w-4" />
+            Reset Counter
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            className="flex items-center gap-2 border-[#FDC400] bg-white hover:bg-white/90 text-black/70" 
+            onClick={skipOneDay}
+          >
+            <ArrowRight className="h-4 w-4" />
+            Skip One Day
+          </Button>
+        </div>
       </div>
     </div>
   );
