@@ -89,12 +89,7 @@ const RepricingCounter: React.FC = () => {
         </div>
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogTrigger asChild>
-            <Button className="mt-8 flex items-center gap-2 bg-[#E60000] hover:bg-[#E60000]/90 border-0 text-white">
-              <Calendar className="h-4 w-4" />
-              Set Repricing Date
-            </Button>
-          </DialogTrigger>
+          {/* Removed the duplicated DialogTrigger and button here */}
           <DialogContent className="sm:max-w-[425px] bg-white border border-black/10">
             <DialogHeader>
               <DialogTitle className="text-black">Set Repricing Date</DialogTitle>
