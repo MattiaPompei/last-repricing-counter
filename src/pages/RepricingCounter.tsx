@@ -90,7 +90,7 @@ const RepricingCounter: React.FC = () => {
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="flex items-center gap-2 bg-[#E60000] hover:bg-[#E60000]/90 border-0 text-white">
+            <Button className="mt-8 flex items-center gap-2 bg-[#E60000] hover:bg-[#E60000]/90 border-0 text-white">
               <Calendar className="h-4 w-4" />
               Set Repricing Date
             </Button>
@@ -146,12 +146,13 @@ const RepricingCounter: React.FC = () => {
         </Dialog>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <DialogTrigger asChild>
-            <Button className="flex items-center gap-2 bg-[#E60000] hover:bg-[#E60000]/90 border-0 text-white">
-              <Calendar className="h-4 w-4" />
-              Set Repricing Date
-            </Button>
-          </DialogTrigger>
+          <Button 
+            className="flex items-center gap-2 bg-[#E60000] hover:bg-[#E60000]/90 border-0 text-white"
+            onClick={() => setIsDialogOpen(true)}
+          >
+            <Calendar className="h-4 w-4" />
+            Set Repricing Date
+          </Button>
 
           <Button 
             variant="outline" 
