@@ -67,7 +67,7 @@ const RepricingCounter: React.FC = () => {
       
       <div className="w-full max-w-3xl mx-auto text-center relative z-10">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-10 text-black">
-          Days Since Last Repricing
+          Days since last repricing
         </h1>
         
         <Card className="bg-white shadow-xl border-black/5 overflow-hidden">
